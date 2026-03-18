@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
 {
     [SerializeField]
-    string levelName;
+    protected string levelName;
     void Start()
     {
         
