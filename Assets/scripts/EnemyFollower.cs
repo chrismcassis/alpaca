@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyFollower : MonoBehaviour
 {
+    private string firstLevelName = "level_1";
     [SerializeField] private float movementSpeed = 2f;
     [SerializeField]
     private float runningSpeed = 6f;
@@ -55,7 +56,14 @@ public class EnemyFollower : MonoBehaviour
     }
     public void ReloadScene()
     {
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentSceneName);
+        if (Difficulty.IsHard)
+        {
+            SceneManager.LoadScene(firstLevelName);
+        }
+        else 
+        { 
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(currentSceneName);
+        }
     }
 }

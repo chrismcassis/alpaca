@@ -11,5 +11,8 @@ public class Menu : MonoBehaviour
     public void ExitGame() { 
     Application.Quit();
     }
-
+    public void SetDifficulty(bool isHard) 
+    {
+        Difficulty.IsHard = isHard;
+    }
 }
